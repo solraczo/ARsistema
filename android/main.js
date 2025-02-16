@@ -8,7 +8,7 @@ let mixerGLTF;
 let actionsGLTF = {};
 let clock = new THREE.Clock();
 let modelLoaded = false;
-const animationSpeed = 0.5;
+const animationSpeed = 1;
 
 
 // Escena, cámara y renderizador
@@ -19,7 +19,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.xr.enabled = true;
 renderer.setClearColor(0x000000, 0);
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = 1.5;
+renderer.toneMappingExposure = 0.5;
 renderer.outputEncoding = THREE.sRGBEncoding;
 document.body.appendChild(renderer.domElement);
 
@@ -63,7 +63,7 @@ rgbeLoader.load(
 // Cargar el modelo GLTF y activar todas sus animaciones en loop
 const gltfLoader = new GLTFLoader();
 gltfLoader.load(
-    'https://solraczo.github.io/solarandroid/models/sistema10.gltf',
+    'https://solraczo.github.io/solarandroid/models/sistema13.gltf',
     (gltf) => {
         const model = gltf.scene;
         model.scale.set(0.5, 0.5, 0.5);
