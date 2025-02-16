@@ -63,10 +63,10 @@ rgbeLoader.load(
 // Cargar el modelo GLTF y activar todas sus animaciones en loop
 const gltfLoader = new GLTFLoader();
 gltfLoader.load(
-    'https://solraczo.github.io/ARsistema/android/models/sistema13.gltf',
+    'https://solraczo.github.io/ARsistema/android/models/sistema14.gltf',
     (gltf) => {
         const model = gltf.scene;
-        model.scale.set(0.5, 0.5, 0.5);
+        model.scale.set(0.1, 0.1, 0.1);
         model.position.set(0, 0, 0);
         scene.add(model);
 
