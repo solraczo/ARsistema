@@ -77,12 +77,14 @@ rgbeLoader.load(
 
 // Cargar el modelo GLTF y activar todas sus animaciones en loop
 const gltfLoader = new GLTFLoader();
+let model;
 gltfLoader.load(
     'https://solraczo.github.io/ARsistema/android/models/sistema15.gltf',
     (gltf) => {
-        const model = gltf.scene;
+        model = gltf.scene;
         model.scale.set(0.2, 0.2, 0.2);
         model.position.set(0, 0, 0);
+        model.visible = false; // Ocultar el modelo inicialmente
         scene.add(model);
 
         mixerGLTF = new THREE.AnimationMixer(model);
