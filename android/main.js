@@ -82,7 +82,7 @@ gltfLoader.load(
     'https://solraczo.github.io/ARsistema/android/models/sistema15.gltf',
     (gltf) => {
         model = gltf.scene;
-        model.scale.set(0.2, 0.2, 0.2);
+        model.scale.set(0.1, 0.1, 0.1);
         model.position.set(0, 0, 0);
         model.visible = false; // Ocultar el modelo inicialmente
         scene.add(model);
