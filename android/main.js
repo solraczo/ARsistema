@@ -27,7 +27,22 @@ document.body.appendChild(renderer.domElement);
 if ('xr' in navigator) {
     navigator.xr.isSessionSupported('immersive-ar').then((supported) => {
         if (supported) {
-            document.body.appendChild(ARButton.createButton(renderer, { requiredFeatures: ['hit-test'] }));
+            const arButton = ARButton.createButton(renderer, { requiredFeatures: ['hit-test'] });
+            document.body.appendChild(arButton);
+
+            // Detectar el inicio de la sesión de AR
+            renderer.xr.addEventListener('sessionstart', () => {
+                if (model) {
+                    model.visible = true;
+                }
+            });
+
+            // Detectar el final de la sesión de AR
+            renderer.xr.addEventListener('sessionend', () => {
+                if (model) {
+                    model.visible = false;
+                }
+            });
         } else {
             alert('WebXR AR no es soportado en este dispositivo.');
         }
