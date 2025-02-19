@@ -79,7 +79,7 @@ rgbeLoader.load(
 const gltfLoader = new GLTFLoader();
 let model;
 gltfLoader.load(
-    'https://solraczo.github.io/ARsistema/android/models/sistema15.gltf',
+    'https://solraczo.github.io/ARsistema/android/models/sistema16.gltf',
     (gltf) => {
         model = gltf.scene;
         model.scale.set(0.1, 0.1, 0.1);
